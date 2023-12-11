@@ -13,6 +13,8 @@ function binarySearch(list, element) {
     if (element <= list[half])
         if (element == list[half-1])
             return binarySearch(list.slice(0, half), element)
+        else if (element <= list[half-1])
+            return binarySearch(list.slice(0, half), element)
         else
             return half
     else
